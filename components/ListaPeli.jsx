@@ -1,25 +1,21 @@
+"use client"; 
 import Pelicula from "./Pelicula";
 
 
 
-async function consumirApi() {
 
 
+export default function ListaPeli({peliculas}) {
 
-    const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-
-    if (!res.ok) return null;
-
-    const data = await res.json()
-    console.log(data)
-
-    return data
-
-}
-
-export default async function ListaPeli() {
-
-    const { results } = await consumirApi();
+    if (!peliculas || peliculas.length === 0) {
+        return (
+          <div className="text-center py-12">
+            <p className="text-gray-400 text-lg">No hay películas disponibles</p>
+          </div>
+        );
+      }
+    
+    
 
     return (
         <div>
@@ -27,7 +23,7 @@ export default async function ListaPeli() {
 
             <div className="grid grid-cols-3 items-center gap-2 justify-items-center ">
                 {
-                    results.map(p => <Pelicula key={p.id} peliData={p} />)
+                    peliculas.map(pelicula => <Pelicula key={pelicula.id} peliData={pelicula} />)
                 }
             </div>
         </div>

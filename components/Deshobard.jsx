@@ -1,9 +1,9 @@
 import ListaPeli from "./ListaPeli";
 
-export default function Deshobard(){
+export default function Deshobard({peliculas}){
     return(
         <div>
-          <ListaPeli/>
+          <ListaPeli peliculas={peliculas}/>
         </div>
     )
 }

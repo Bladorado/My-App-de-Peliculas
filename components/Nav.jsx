@@ -1,30 +1,86 @@
-import Link from 'next/link'; 
+import Link from 'next/link';
 import Image from 'next/image';
 
 
-export default function Nav(){
-    return(
-        <nav className="w-64 bg-green-200 text-black p-6 flex flex-col gap-4 h-screen fixed">
-        <h2 className="text-2xl font-bold mb-8 text-blue-950">My App de Peliculas</h2>
-
-        {/* Usamos <Link> para navegación instantánea */}
-        <Link href="/" className="hover:text-gray-500  transition font-bold">Populares</Link>
-        <Link href="/Buscar" className="hover:text-gray-500  transition font-bold">Buscar</Link>
-        <Link href="/Favoritas-pelis" className="hover:text-gray-500  transition font-bold">Mis Favoritos</Link>
+export default function Nav() {
+  return (
+    <nav className="fixed m-auto h-[calc(100vh-20px)]  flex flex-col bg-slate-700/60 backdrop-blur-md rounded-lg shadow-2xl border border-slate-500/50 overflow-hidden font-sans">
       
+    {/* --- BARRA SUPERIOR (Tipo Windows 7 Gadgets) --- */}
+    <div className="p-3 bg-gradient-to-b from-slate-600/60 to-slate-700/60 flex items-center justify-between border-b border-white/10">
+      
+      {/* Botones de Navegación y Título */}
+      <div className="flex items-center gap-2">
+          <button className="w-5 h-5 rounded-full border border-slate-400 flex items-center justify-center bg-slate-500/50 text-slate-200">
+              <span className="text-[10px]">‹</span>
+          </button>
+          <h1 className="text-white/80 text-sm font-light tracking-wide px-3 py-1 bg-slate-500/50 rounded-full border border-white/5 shadow-inner">
+              Página 1 de 1
+          </h1>
+          <button className="w-5 h-5 rounded-full border border-slate-400 flex items-center justify-center bg-slate-500/50 text-slate-200">
+              <span className="text-[10px]">›</span>
+          </button>
+      </div>
 
-        <div className="mt-auto text-xs text-slate-500">
+      {/* Input de Búsqueda Ficticio */}
+     
+    </div>
 
-          {/* <Image
-            width="100"
-            height={100}
-            src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
-            alt='Compuatador de Mesa'
-            className="rounded-lg shadow-2xl w-sm"
-          /> */}
+    {/* --- REJILLA DE GADGETS (Tus Links) --- */}
+    <div className="flex-1 p-5 aoverflow-y-auto">
+      
+      {/* Link 1 (Populares) */}
+      <Link href="/" className="group flex flex-col items-center justify-center text-center gap-2">
+          {/* Contenedor del Icono con Hover */}
+          <div className="w-20 h-20 flex items-center justify-center rounded-lg border-2 border-transparent group-hover:bg-slate-300/10 group-hover:border-slate-300/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
+              {/* Icono (Emoji o SVG) */}
+              <div className="w-16 h-16 rounded border border-slate-500 bg-slate-800 flex items-center justify-center text-4xl shadow-inner">
+                 ✨
+              </div>
+          </div>
+          {/* Tu texto original */}
+          <span className="text-blue-100 text-xs font-light tracking-wide opacity-80 group-hover:opacity-100 line-clamp-2 px-1">
+              Populares
+          </span>
+      </Link>
+      
+      {/* Link 2 (Buscar) */}
+      <Link href="/Buscar" className="group flex flex-col items-center justify-center text-center gap-2">
+          <div className="w-20 h-20 flex items-center justify-center rounded-lg border-2 border-transparent group-hover:bg-slate-300/10 group-hover:border-slate-300/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
+              <div className="w-16 h-16 rounded border border-slate-500 bg-slate-800 flex items-center justify-center text-4xl shadow-inner">
+                 🔍
+              </div>
+          </div>
+          <span className="text-blue-100 text-xs font-light tracking-wide opacity-80 group-hover:opacity-100 line-clamp-2 px-1">
+              Buscar
+          </span>
+      </Link>
+      
+      {/* Link 3 (Mis Favoritos) */}
+      <Link href="/Favoritas-pelis" className="group flex flex-col items-center justify-center text-center gap-2">
+          <div className="w-20 h-20 flex items-center justify-center rounded-lg border-2 border-transparent group-hover:bg-slate-300/10 group-hover:border-slate-300/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
+              <div className="w-16 h-16 rounded border border-slate-500 bg-slate-800 flex items-center justify-center text-4xl shadow-inner">
+                 ⭐
+              </div>
+          </div>
+          <span className="text-blue-100 text-xs font-light tracking-wide opacity-80 group-hover:opacity-100 line-clamp-2 px-1">
+              Mis Favoritos
+          </span>
+      </Link>
+      
+    </div>
 
-          Peliculas Vitoria-Gasteiz v2.0
-        </div>
-      </nav>
-    )
+    {/* --- BARRA INFERIOR --- */}
+    <div className="p-3 bg-gradient-to-t from-black/20 to-transparent flex items-center justify-between border-t border-white/5">
+      <button className="flex items-center gap-2 text-white/70 text-xs hover:text-cyan-300">
+          <span className="w-5 h-5 rounded-full border border-slate-500 bg-slate-600 flex items-center justify-center text-[10px]">▼</span>
+          Mostrar detalhes
+      </button>
+      <span className="text-[10px] text-blue-200/50 font-mono tracking-wider uppercase pr-2">
+         {/* Tu texto original */}
+         VG v2.0
+      </span>
+    </div>
+  </nav>
+  )
 }
