@@ -1,8 +1,7 @@
-// app/favoritos/page.js
 "use client";
 
 import { useFavoritos } from "@/context/FavoritosContext";
-import ListaPeli from "@/components/ListaPeli";
+import ListaPeli from "@/components/populares/ListaPeli";
 
 export default function Favoritos() {
   const { favoritos, cargando } = useFavoritos();

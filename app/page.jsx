@@ -1,13 +1,10 @@
-import Deshobard from "@/components/Deshobard";
-import Pelicula from "@/components/Pelicula";
+import Deshobard from "@/components/populares/Deshobard";
+import Pelicula from "@/components/populares/Pelicula";
+import { consumirApi } from "@/lib/apipeli";
 import Image from "next/image";
 
-async function consumirApi() {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`);
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data;
-}
+
+
 
 export default async function HomePopulares() {
   const data = await consumirApi();
