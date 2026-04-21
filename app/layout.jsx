@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import { FavoritosProvider } from "@/context/FavoritosContext";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-screen bg-[#0b2b4a] overflow-hidden selection:bg-cyan-500/30">
-        <FavoritosProvider>
+      
           {/* BARRA LATERAL ESTILO "EXPLORADOR DE WINDOWS 7" */}
           <aside className="w-64 flex-shrink-0 sticky top-0 h-screen z-50 
                              bg-gradient-to-r from-white/20 to-white/5 
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
               {children}
             </div>
           </main>
-        </FavoritosProvider>
+     
       </body>
     </html>
   );

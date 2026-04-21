@@ -1,18 +1,17 @@
 "use client";
 
-import { useFavoritos } from "@/context/FavoritosContext";
+
 import ListaPeli from "@/components/populares/ListaPeli";
+import { useFavoritos } from "@/store/useFavoritosStore";
 
 export default function Favoritos() {
-  const { favoritos, cargando } = useFavoritos();
 
-  if (cargando) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
-      </div>
-    );
-  }
+  const favoritos = useFavoritos(state => state.favoritos)
+  
+
+
+
+
 
   return (
     <div className="p-8">
