@@ -24,6 +24,7 @@ export const useFavoritos = create
         }),
         {
             name: "favoritos-storage",
+            skipHydration: true, 
         }
     )
     )

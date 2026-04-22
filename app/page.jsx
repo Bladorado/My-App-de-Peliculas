@@ -1,12 +1,10 @@
 import Deshobard from "@/components/populares/Deshobard";
-import Pelicula from "@/components/populares/Pelicula";
 import { consumirApi } from "@/lib/apipeli";
-import Image from "next/image";
-
 
 
 
 export default async function HomePopulares() {
+
   const data = await consumirApi();
   const peliculas = data?.results || [];
 

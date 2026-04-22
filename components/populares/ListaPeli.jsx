@@ -1,8 +1,4 @@
-"use client"; 
 import Pelicula from "./Pelicula";
-
-
-
 
 
 export default function ListaPeli({peliculas}) {

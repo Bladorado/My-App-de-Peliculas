@@ -10,6 +10,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function FichaPelicula({ params }) {
+  
   const { id } = await params;
   const peli = await fetchPeli(id);
   const trailer = await fetchPeliTrailer(id);

@@ -1,9 +1,9 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Favorito from "./Favorito";
 
 export default function Pelicula({ peliData }) {
+
   // Procesar datos igual que el original
   const rating = Math.round(peliData.vote_average * 10) / 10;
   const year = peliData.release_date?.slice(0, 4);
@@ -17,6 +17,7 @@ export default function Pelicula({ peliData }) {
       </div>
 
       <Link href={`/peliculas/${peliData.id}`} className="block">
+        
         {/* --- BARRA SUPERIOR (Estilo Aero Window) --- */}
         <div className="h-6 bg-gradient-to-b from-white/20 to-transparent flex items-center px-2 justify-between border-b border-white/10">
           <div className="flex gap-1">

@@ -8,6 +8,7 @@ export const metadata = {
 };
 
 export default async function buscar({ searchParams }) {
+    
     const { q } = await searchParams;
     const data = q ? await fetchBusqueda(q) : null;
 
